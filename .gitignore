@@ -1,4 +1,42 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+
+# Virtual environments
 .venv/
+venv/
+env/
+ENV/
+
+# IDE: PyCharm
+.idea/workspace.xml
+.idea/workspace.xml.*
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+.idea/shelf/
+.idea/httpRequests/
+.idea/inspectionProfiles/Project_Default.xml
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project output
 outputs/
+*.logss
