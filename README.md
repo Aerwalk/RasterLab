@@ -38,7 +38,7 @@ python -m venv .venv
 python -m unittest discover -s tests -v
 python tools/make_examples.py
 python tools/check_gui.py
-python tools/build_report.py
+
 ```
 
 Повторная генерация перезаписывает только демонстрационные файлы в `examples/`. Численные характеристики сжатых файлов могут зависеть от версии Pillow. Исходники алгоритмов — `rasterlab/processing.py`, преобразования цвета — `rasterlab/colors.py`.
