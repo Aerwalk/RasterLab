@@ -6,7 +6,9 @@ import csv
 import cv2
 import numpy as np
 from PIL import Image
-from rasterlab.processing import process, load_image, VideoProcessor
+from src.rasterlab.core import process
+from src.rasterlab.core.video import FrameProcessor
+from src.rasterlab.services.files import load_image
 
 
 def main():
@@ -51,7 +53,7 @@ def main():
     writer = cv2.VideoWriter(str(video_path), cv2.VideoWriter_fourcc(*"MJPG"), 25, (384, 256))
     if not writer.isOpened():
         raise RuntimeError("Кодек MJPG недоступен.")
-    processor = VideoProcessor()
+    processor = FrameProcessor()
     try:
         for i in range(150):
             frame = np.full((256, 384, 3), 45, np.uint8)

@@ -292,16 +292,28 @@ Canny включает гауссовское сглаживание, вычис
 
 ## 10. Структура и запуск
 
-**Название:** RasterLab. **Язык:** Python 3.10+. **GUI:** Tkinter/ttk. **Обработка:** OpenCV, NumPy, Pillow.
-
 ```text
-main.py                   — точка входа
-rasterlab/gui.py           — интерфейс, изображение, гистограммы, видео
-rasterlab/colors.py        — преобразование цветовых моделей
-rasterlab/processing.py    — фильтры, признаки, метаданные, сравнение, MOG2
-tools/make_examples.py     — учебные данные и результаты
-tests/test_processing.py   — автоматические проверки
-examples/                 — входные данные и иллюстрации
+main.py                         — точка входа
+src/rasterlab/
+  core/
+    colors.py                   — шесть цветовых моделей, переводы
+    image.py                    — фильтры, коррекция, гистограммы
+    features.py                 — поиск похожих изображений
+    video.py                    — FrameProcessor: маска движения и размытие
+  services/
+    files.py                    — чтение/запись файлов и метаданных
+    video.py                    — VideoSession: жизненный цикл видео
+  ui/
+    app.py                      — главное окно, связи между вкладками
+    model.py                    — состояние изображения и история шага
+    histogram.py                — отрисовка гистограмм
+    widgets.py                  — диалоги и переиспользуемые виджеты
+    image_view.py               — масштабируемый просмотр массива
+    tabs/                       — image, color, compare, video
+rasterlab/                      — facade для обратной совместимости
+tools/                          — генерация примеров, проверка GUI, сборка отчёта
+tests/                          — модульные проверки
+examples/                       — входные данные и иллюстрации
 ```
 
 Запуск из папки проекта:
